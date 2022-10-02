@@ -1,6 +1,6 @@
 # CAPP 30239 Data Visualization
 
-Repository for CAPP 30239 Data Visualization. This repository will store course assignments and in-class coding examples.
+Repository for CAPP 30239 Data Visualization. This repository will store assignments and in-class coding examples.
 
 Material is organized by week. Each weeks corresponds to a design theory/coding topic.
 
