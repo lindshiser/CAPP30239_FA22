@@ -1,4 +1,4 @@
-# Data for Final Project
+# About Data for Final Project
 
 For my final project, I'll be visualizing the environmental impacts of food production. 
 
