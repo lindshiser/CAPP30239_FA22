@@ -2,7 +2,7 @@
 
 For my final project, I'll be visualizing the environmental impacts of food production. 
 
-I was largely inspired by Hannah Ritchie and Max Roser's [work on the environmental impacts of food production]([url](https://ourworldindata.org/environmental-impacts-of-food)) for [Our World in Data]([url](https://ourworldindata.org/)). I've uploaded select data files from their work to my repo:
+I was largely inspired by Hannah Ritchie and Max Roser's [work on the environmental impacts of food production](https://ourworldindata.org/environmental-impacts-of-food) for [Our World in Data](https://ourworldindata.org/). I've uploaded select data files from their work to my repo:
 
 - **food-footprints.csv:** Primary source. Calculates greenhouse gas (ghg) emissions per kg for different food products. Data is from 2018.
 
