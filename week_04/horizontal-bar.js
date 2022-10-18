@@ -1,15 +1,19 @@
 /* Horizontal bar chart for COVID country cases */
 
-d3.csv("covid.csv").then(data => {
+d3.csv("covid.csv").then(data => {      // uses a promise, .then, which is JS */
 
     for (let d of data) {
-        d.cases = +d.cases; //force a number
+        d.cases = +d.cases;         //force a number, d is the row that you're on
     };
 
-    data.sort((a, b) => b.cases - a.cases);
+    // to rank by highest number of cases
+    data.sort((a, b) => b.cases - a.cases); 
+
+    // to rank by country, isntead
+    // data.sort((a, b) => d3.ascending(a.country, b.country));
 
     const height = 600,
-          width = 800,
+          width = 800, // width is a variable (in blue)
           margin = ({ top: 25, right: 30, bottom: 35, left: 50 });
 
     let svg = d3.select("#horizontal-chart")
@@ -42,12 +46,12 @@ d3.csv("covid.csv").then(data => {
     bar.append("rect") // add rect to bar group
         .attr("fill", "steelblue")
         .attr("x", margin.left)
-        .attr("width", d => x(d.cases))
+        .attr("width", d => x(d.cases)) // width is an attribute (an orange "string")
         .attr("y", d => y(d.country))
         .attr("height", y.bandwidth());
     
     bar.append('text') // add labels
-        .text(d => d.cases)
+        .text(d => d.cases) // "d => d.___" means we're looping
         .attr('x', d => margin.left + x(d.cases) - 10)
         .attr('y', d => y(d.country) + (y.bandwidth()/2))
         .attr('text-anchor', 'end')
