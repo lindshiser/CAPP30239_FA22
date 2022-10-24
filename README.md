@@ -1,26 +1,30 @@
 # CAPP 30239 Data Visualization
 
-Wecome to my Data Visualization portfolio for CAPP 30239. This repository will store assignments and in-class coding examples, along with my final visualization project.
+This is my Data Visualization portofolio for CAPP 30239, Data Visualization, offered in Fall 2022. The course is offered through the M.S. in Computational Analysis and Public Policy program at the University of Chicago.
 
-Material is organized by week. Each weeks corresponds to a design theory/coding topic.
+The goal of this course is to provide an introduction to data visualization design, theory, and practices. Assignments are completed using HTML and JavaScript, namely D3.js. Each week's course material corresponds to a design theory / practice. 
 
-**Week 1: Welcome / GitHub and Data**
+Assignment deliverables are linked below.
 
-**Week 2: Topics in Data Visualization / Data Visualization Coding**
+**Week 1: Welcome / Introduction to HTML and CSS**
 
-**Week 3: Storytelling / Change Over Time**
+**Week 2: Data Humanism / Introduction to JavaScript**
 
-- Create a bar chart that displays number of visits to public libraries in Chicago ([HTML](https://github.com/lindshiser/CAPP30239_FA22/blob/main/week_03/homework.html)) ([JavaScript](https://github.com/lindshiser/CAPP30239_FA22/blob/main/week_03/homework.js))
+**Week 3: Data Visualization Theory / Introduction to D3.js, Bar Charts**
 
+- [Covid Bar Chart](https://lindshiser.github.io/CAPP30239_FA22/week_03/index.html): Plot the number of COVID-19 cases by country
+- [Library Bar Chart](https://lindshiser.github.io/CAPP30239_FA22/week_03/homework.html): Plot the number of visits to public libraries in Chicago
 
-**Week 4: Data Art Versus Analysis / Correlation & Distribution**
+**Week 4: Storytelling / Change Over Time and Line Charts**
 
-**Week 5: Design Basics / Shapes/Layouts**
+- [Interest Rates Line Chart](https://lindshiser.github.io/CAPP30239_FA22/week_04/homework.html): Plot monthly interest rates in Canada in 2020
 
-**Week 6: Data Ethics / Maps**
+**Week 5**
 
-**Week 7: Theory / Trees/Hierarchies**
+**Week 6**
 
-**Week 8: Theory / Flow**
+**Week 7**
 
-**Week 9: Visualizing Big Data & Uncertainty / Animating with Physics in D3**
+**Week 8**
+
+**Week 9**
