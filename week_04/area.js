@@ -49,5 +49,19 @@ d3.csv('long-term-interest-monthly.csv').then(data => {
       .attr("y", 10)
       .attr("transform", "rotate(-90)")
       .text("Interest rate");
-    
+
+    // create shape function for area
+    let area = d3.area()
+      .x(d => x(d.Date))
+      // need two 'y'
+      .y0(y(0)) // pass zero, i.e. starts at baseline
+      .y1(d => y(d.Value))
+
+    // put shape on page
+    svg.append("path")
+      .datum(data)
+      .attr("d", area)
+      .attr("fill", "pink") // fill in area
+      .attr("stroke", "steelblue") // put a border on area
+      // .attr("opacity", 0.5) // to make it more opaque    
   });

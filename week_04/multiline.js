@@ -10,7 +10,7 @@ const svg = d3.select("#chart")
 d3.csv("long-term-interest-G7.csv").then(data => {
   let timeParse = d3.timeParse("%Y-%m");
 
-  let countries = new Set();
+  let countries = new Set(); // a Set is an array with only unique values, no repeating
 
   for (let d of data) {
     d.Date = timeParse(d.Date);
@@ -34,10 +34,11 @@ d3.csv("long-term-interest-G7.csv").then(data => {
     .attr("transform", `translate(${margin.left},0)`)
     .call(d3.axisLeft(y).tickSize(-innerWidth).tickFormat(d => d + "%"));
 
-  let line = d3.line()
+  let line = d3.line() // line generator
     .x(d => x(d.Date))
     .y(d => y(d.Value));
  
+  // function that creates a line for each individual country
   for (let country of countries) {
     let countryData = data.filter(d => d.Location === country);
 
@@ -48,7 +49,7 @@ d3.csv("long-term-interest-G7.csv").then(data => {
         d3.select(this).classed("highlight", true);
       });
 
-    if (country === "USA") {
+    if (country === "USA") { // if refresh, by default, lands on USA
       g.classed("highlight", true);
     }
 
