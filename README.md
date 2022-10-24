@@ -1,6 +1,6 @@
 # CAPP 30239 Data Visualization
 
-This is my Data Visualization portofolio for CAPP 30239, Data Visualization, offered in Fall 2022. The course is offered through the M.S. in Computational Analysis and Public Policy program at the University of Chicago.
+This is my portofolio for CAPP 30239, Data Visualization. The course was offered in Fall 2022 through the M.S. in Computational Analysis and Public Policy program at the University of Chicago.
 
 The goal of this course is to provide an introduction to data visualization design, theory, and practices. Assignments are completed using HTML and JavaScript, namely D3.js. Each week's course material corresponds to a design theory / practice. 
 
