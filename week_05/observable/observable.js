@@ -8,7 +8,7 @@ d3.csv('cars-2.csv').then(data => {
         type: d3.scaleLinear, // try d3.scaleLog
         title: d => `${d.Origin}: ${d.Name}\n${d.Weight_in_lbs.toLocaleString("en")} lbs.`,
         width: 1040,
-        marginTop: 50,
+        marginTop: 50, // if not included, will use default marginTop
     });
 
     // (5) APPEND TO PAGE
