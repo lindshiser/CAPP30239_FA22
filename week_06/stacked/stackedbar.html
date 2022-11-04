@@ -29,34 +29,35 @@
     
     d3.csv("fruit.csv").then( data => {
     
-      let x = d3.scaleBand(data.map(d => (d.group)),[margin.left, width - margin.right])
-        .padding([0.2]);
+      let x = d3.scaleBand(data.map(d => (d.group)),[margin.left, width - margin.right]) // scaleBand is for bar chart; first value is data, second value is range
+        .padding([0.2]); // values > 0 create space between bars
 
-      let y = d3.scaleLinear([0,45],[height - margin.bottom, margin.top]);
+      let y = d3.scaleLinear([0,45],[height - margin.bottom, margin.top]); // note domain and range
 
-      svg.append("g")
+      svg.append("g") // axis!
         .attr("transform", `translate(0,${height - margin.bottom})`)
         .call(d3.axisBottom(x))
 
-      svg.append("g")
+      svg.append("g") // axis!
         .attr("transform", `translate(${margin.left},0)`)
         .call(d3.axisLeft(y).tickSize(-width + margin.left + margin.right))
       
       //protein,carbs,fiber
-      const subgroups = data.columns.slice(1);
+      const subgroups = data.columns.slice(1); // create subgroups to use as keys
+      // slice 1 gets rid of 'group', leaving only protein, carbs, fiber
 
-      const color = d3.scaleOrdinal(subgroups,['#e41a1c','#377eb8','#4daf4a']);
+      const color = d3.scaleOrdinal(subgroups,['#e41a1c','#377eb8','#4daf4a']); // scaleOrdinal, set a list of colors for each subgroup
     
       const stackedData = d3.stack()
-        .keys(subgroups)(data);
+        .keys(subgroups)(data); // passe in keys (protein, carbs, fiber), w/ primary data source
 
-      svg.append("g")
+      svg.append("g") // do a data join
         .selectAll("g")
         .data(stackedData)
         .join("g")
-        .attr("fill", d => color(d.key))
+        .attr("fill", d => color(d.key)) // fill using scaleOrdinal, passing in keys
         .selectAll("rect")
-        .data(d => d)
+        .data(d => d) // "get d off the d", get nested data
         .join("rect")
         .attr("x", d => x(d.data.group))
         .attr("y", d => y(d[1]))
@@ -70,14 +71,14 @@
         .attr("class", "legend-group");
 
       legendGroup
-        .append("circle")
+        .append("circle") // build circle
         .attr("cx", (d, i) => (10 + (i * 75)))
         .attr("cy",10)
         .attr("r", 3)
         .attr("fill", (d, i) => color(i));
       
       legendGroup
-        .append("text")
+        .append("text") // build text
         .attr("x", (d, i) => (20 + (i * 75)))
         .attr("y",15)
         .text((d, i) => subgroups[i]);

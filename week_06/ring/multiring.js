@@ -1,10 +1,10 @@
 d3.json('budget-all.json').then((data) => {
   for (let d of data) {
-    createRing(d);
+    createRing(d); // loop through data, and create a function named 'Ring'
   }
 });
 
-function createRing({ year, values }) {
+function createRing({ year, values }) { // destructure into two values: year and values
   const height = 250,
     width = 300,
     innerRadius = 40,

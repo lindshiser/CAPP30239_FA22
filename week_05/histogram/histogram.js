@@ -36,6 +36,7 @@ d3.json('climate-jan.json').then((data) => {
   let g = binGroups.selectAll("g") // select all bin groups ("g"s)
     .data(bins) // use data...
     .join("g"); // ..to do a data join on g element
+    // i.e. join grabs data from bins, matches to dom element ... magic of d3!
 
   g.append("rect") // use rectangles, with animation!
     .attr("x", d => x(d.x0) + (padding / 2)) // position with x, dividing padding in half
