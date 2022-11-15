@@ -26,6 +26,6 @@ The [American Time Use Survey (ATUS)](https://www.census.gov/programs-surveys/at
 
 The [Current Population Survey (CPS)](https://www.census.gov/programs-surveys/cps.html) is the primary source of labor force statistics for the population of the United States. Respondents answered questions about [internet use](https://www.census.gov/topics/population/computer-internet/about.html) nearly every year from 2000-2010.
 
-**Technology adoption in US housholds, *Our World in Data***
+**Technology adoption in US households, *Our World in Data***
 
 Researchers Hannah Ritchie and Max Roser at *Our World in Data* constructed a dataset compiled from multiple sources that constructs a broad overview of [technology adoption in the United States](https://ourworldindata.org/technology-adoption), beginning as early as 1860. For the purposes of this project, I will focus on technologies originating in the mid-20th century.
