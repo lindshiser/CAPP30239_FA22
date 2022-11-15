@@ -5,7 +5,7 @@ setwd("/Users/lindsayhiser/Documents/Harris/4_FA22/Data Visualization/CAPP30239_
 
 path <- "/Users/lindsayhiser/Documents/Harris/4_FA22/Data Visualization/CAPP30239_FA22/final_project"
 
-raw_adoption <- read_csv(file.path(path, "/data-raw/technology-adoption-by-households-in-the-united-states.csv"))
+raw_adoption <- read_csv(file.path(path, "/data/technology-adoption-by-households-in-the-united-states.csv"))
 raw_adoption <- head(raw_adoption, -2) # remove last two rows
 
 # codebook
@@ -32,4 +32,4 @@ df <- raw_adoption %>%
 
 
 # write csv
-write_csv(df, 'data-final/adoption.csv')
+write_csv(df, 'multiline-chart/adoption.csv')

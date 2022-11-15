@@ -5,13 +5,13 @@ library(stringr)
 setwd("/Users/lindsayhiser/Documents/Harris/4_FA22/Data Visualization/CAPP30239_FA22/final_project")
 path <- "/Users/lindsayhiser/Documents/Harris/4_FA22/Data Visualization/CAPP30239_FA22/final_project"
 
-raw_01 <- read_csv(file.path(path, "/data-raw/census_internet/internet_usage_by_state_2001.csv"))
-raw_03 <- read_csv(file.path(path, "/data-raw/census_internet/internet_usage_by_state_2003.csv"))
-raw_07 <- read_csv(file.path(path, "/data-raw/census_internet/internet_usage_by_state_2007.csv"))
-raw_09 <- read_csv(file.path(path, "/data-raw/census_internet/internet_usage_by_state_2009.csv"))
-raw_10 <- read_csv(file.path(path, "/data-raw/census_internet/internet_usage_by_state_2010.csv"))
-raw_11 <- read_csv(file.path(path, "/data-raw/census_internet/internet_usage_by_state_2011.csv"))
-raw_12 <- read_csv(file.path(path, "/data-raw/census_internet/internet_usage_by_state_2012.csv"))
+raw_01 <- read_csv(file.path(path, "/data/census_internet/internet_usage_by_state_2001.csv"))
+raw_03 <- read_csv(file.path(path, "/data/census_internet/internet_usage_by_state_2003.csv"))
+raw_07 <- read_csv(file.path(path, "/data/census_internet/internet_usage_by_state_2007.csv"))
+raw_09 <- read_csv(file.path(path, "/data/census_internet/internet_usage_by_state_2009.csv"))
+raw_10 <- read_csv(file.path(path, "/data/census_internet/internet_usage_by_state_2010.csv"))
+raw_11 <- read_csv(file.path(path, "/data/census_internet/internet_usage_by_state_2011.csv"))
+raw_12 <- read_csv(file.path(path, "/data/census_internet/internet_usage_by_state_2012.csv"))
 
 
 # clean 2001
@@ -75,4 +75,4 @@ df_12 <- raw_12 %>%
 df <- rbind(df_01, df_03, df_07, df_09, df_10, df_11, df_12)
 df$share <- as.numeric(df$share)
 
-write_csv(df, "data-final/access.csv")
+write_csv(df, "choropleth-map/access.csv")

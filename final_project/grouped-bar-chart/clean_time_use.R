@@ -5,7 +5,7 @@ options(scipen = 9999)
 
 path <- "/Users/lindsayhiser/Documents/Harris/4_FA22/Data Visualization/CAPP30239_FA22/final_project"
 
-raw_atus_act <- read_csv(file.path(path, "/data-raw/atusact.csv"))
+raw_atus_act <- read_csv(file.path(path, "/data/atusact.csv"))
 
 activities <- tibble(
   name = c("TV and movies", "TV (religious)", "Listening to radio", 
