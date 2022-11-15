@@ -2,11 +2,6 @@
 
 For my final project, I will be visualizing technology adoption in American households throughout the 21st century.
 
-The following sub-folders contain various project components:
-- [data_raw](https://github.com/lindshiser/CAPP30239_FA22/tree/main/final_project/data-raw): Raw data files uploaded from their respective sources
-- [data_build](https://github.com/lindshiser/CAPP30239_FA22/tree/main/final_project/data-build): Scripts to clean raw data in R
-- [data_final](https://github.com/lindshiser/CAPP30239_FA22/tree/main/final_project/data-final): Cleaned data exported as csv files
-
 ## Topic Overview
 
 As a consumer of information in the 21st century, it feels as though new technologies are quickly and consistently being adopted into American households while other technologies become obsolete. Recent technologies like computers, cell phones,  and tablets, for example, have been embraced by today's “information economy” and demand increasingly more of our time and attention.
