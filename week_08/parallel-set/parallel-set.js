@@ -3,7 +3,7 @@
 const width = 1000,
   height = 600,
   margin = { top: 25, right: 0, bottom: 20, left: 0 },
-  nodeWidth = 5,
+  nodeWidth = 5, // instead of radius in chord chart; this is white separation between lines
   nodePadding = 10;
 
 const svg = d3.select("#chart")
@@ -39,8 +39,9 @@ d3.csv("../degrees.csv").then((data) => {
     .domain(genders);
 
   const { nodes, links } = sankey(graph); // modifies and returns graph
+  // destructures, or 'pulls apart' our graph object
 
-  svg.append("g")
+  svg.append("g") // use nodes data, i.e. build out black rectangles on the side
     .selectAll("rect")
     .data(nodes)
     .join("rect")
@@ -51,12 +52,12 @@ d3.csv("../degrees.csv").then((data) => {
     .append("title")
     .text(d => d.name);
 
-  svg.append("g")
+  svg.append("g") // creating ribbons, i.e. paths
     .attr("fill", "none")
     .selectAll("g")
     .data(links)
     .join("path")
-    .attr("d", d3.sankeyLinkHorizontal())
+    .attr("d", d3.sankeyLinkHorizontal()) // from sankey lib, fills path
     .attr("stroke", d => color(d.source.name))
     .attr("stroke-width", d => d.width)
     .attr("opacity", 0.75)
@@ -67,9 +68,9 @@ d3.csv("../degrees.csv").then((data) => {
     })
     .on("mouseout", function() {
       d3.select(this)
-        .attr("opacity", 0.75);
+        .attr("opacity", 0.75); // default opacity is 0.75
     })
-    .on("click", function(e, d) {
+    .on("click", function(e, d) { // use a click event
       let str = `${d.source.name} earned ${d.source.value.toLocaleString()} ${d.target.name} Degrees`;
       d3.select("h2")
         .html(str);
