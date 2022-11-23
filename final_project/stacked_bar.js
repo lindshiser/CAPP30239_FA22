@@ -14,7 +14,7 @@ d3.csv('data/cleaned/time_use.csv').then(data => {
         height: 500
     });
 
-    document.getElementById("#stacked-bar").appendChild(chart); // Q: do I need a hashtag?
+    document.getElementById("stacked-bar").appendChild(chart); // Q: do I need a hashtag?
 });
 
 // Copyright 2021 Observable, Inc.
