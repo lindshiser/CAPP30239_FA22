@@ -1,7 +1,10 @@
 library(tidyverse)
 options(scipen = 9999)
 library(stringr)
-library(tigris)
+#install.packages("usmap")
+library(usmap)
+#install.packages('rjson')
+library(rjson)
 
 setwd("/Users/lindsayhiser/Documents/Harris/4_FA22/Data Visualization/CAPP30239_FA22/final_project")
 path <- "/Users/lindsayhiser/Documents/Harris/4_FA22/Data Visualization/CAPP30239_FA22/final_project"
@@ -77,21 +80,26 @@ df <- rbind(df_01, df_03, df_07, df_09, df_10, df_11, df_12)
 df$share <- as.numeric(df$share)
 
 # merge with FIPS codes
-USdata$State
+fips <- df %>%
+  group_by(state) %>%
+  summarise(id = list(fips(state = first(state)))) %>%
+  unnest(c(id))
 
-
-
-
+df <- df %>%
+  left_join(fips, by = "state") %>%
+  select(id, state, year, share)
 
 # create list
 state_share <- df %>%
-  select(state, share)
+  select(state, id, share) %>%
+  mutate(id = as.character(id))
 
 list <- df %>%
   group_by(year) %>%
   summarise(state = list(state_share)) %>%
   deframe()
 
-write_csv(state_share, "choropleth-map/access_list.csv")
+write_csv(df, "choropleth-map/data/access.csv")
+write.csv(state_share, "choropleth-map/data/access_list.csv", row.names = FALSE)
 
-write_csv(df, "choropleth-map/access.csv")
+?write_csv()

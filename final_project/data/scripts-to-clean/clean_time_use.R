@@ -2,13 +2,13 @@ library(tidyverse)
 options(scipen = 9999)
 
 setwd("/Users/lindsayhiser/Documents/Harris/4_FA22/Data Visualization/CAPP30239_FA22/final_project")
-atus0321 <- read_csv("data/atussum_0321.dat")
+atus0321 <- read_csv("data/sourced/atussum_0321.dat")
 
 activities <- tibble(
   name = c("Watching TV/movies", "Listening to radio", 
             "Listening to music", "Using computer", 
             "Using phone (family)", "Using phone (friends)"),
-  code = c("120303", "120305", "120306", "120308", "160101", "160102")
+  code = c("t120303", "t120305", "t120306", "t120308", "t160101", "t160102")
 )
 
 df <- atus0321 %>%
