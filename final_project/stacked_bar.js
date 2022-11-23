@@ -1,3 +1,5 @@
+
+
 d3.csv('data/cleaned/time_use.csv').then(data => {
 
     let chart = StackedBarChart(data, {
@@ -5,15 +7,14 @@ d3.csv('data/cleaned/time_use.csv').then(data => {
         y: d => d.minutes,
         z: d => d.activity,
         xDomain: d3.groupSort(data, D => d3.sum(D, d => -d.minutes), d => d.year),
-        yLabel: "↑ Population (millions)",
+        yLabel: "Minutes",
         zDomain: activities,
         colors: d3.schemeSpectral[activities.length],
         width,
         height: 500
     });
 
-    // is this the right place to put "stacked bar chart"?
-    document.getElementById("chart").appendChild(chart); 
+    document.getElementById("#stacked-bar").appendChild(chart); // Q: do I need a hashtag?
 });
 
 // Copyright 2021 Observable, Inc.
