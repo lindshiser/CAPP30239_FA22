@@ -6,118 +6,101 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Symbol Scatterplot</title>
-  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
-  <style>
-    svg text {
-      font-size: 8px;
-      text-transform: uppercase;
-    }
-
-    a { color: #369;}
-
-    svg { width: 100%; }
-
-    text {
-      font-size: 10px;
-      text-transform: uppercase;
-    }
-
-    path.domain { display: none; }
-
-    line {
-      stroke: #eee;
-      stroke-dasharray: 1px;
-    }
-
-    cursor { cursor: default; }
-    cursor path {
-      stroke-width: 1.5;
-      opacity: 0.75;
-    }
-
-    .highlight path {
-      stroke: steelblue;
-      opacity: 1;
-    }
-
-    .highlight text { fill: steelblue; }
-    
-    .row {
-      column-count: 2;
-    }
-
-    #legend {
-      margin: 30px 0px 50px;
-    }
-
-    #legend svg {
-      margin: 0 auto;
-    }
-
-    .svg-tooltip {
-      background: rgba(69, 77, 93, .9);
-      border-radius: 5px;
-      color: #fff;
-      display: block;
-      font-size: 12px;
-      line-height: 16px;
-      text-transform: none;
-      max-width: 320px;
-      padding: 1rem;
-      position: absolute;
-      text-overflow: ellipsis;
-      white-space: pre;
-      z-index: 300;
-      visibility: hidden;
-    }
-    
-    .chart, .chart p, .chart span {
-      width: 100%;
-      font-size: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="container">
+
+  <main>
+
+    <section class="section-container">
+
+      <div class="title-container">
         <h1>In recent years, Americans have adopted more communication technologies at increasing rates</h1>
-        <p>
-            Share of US households with different technologies in the home, 1903-2019. Data: <a href="https://ourworldindata.org/technology-adoption">Our World in Data</a>
-        </p>
-        <div id="multiline-chart"></div>
-    </div>
-    <div class="container">
+        <p>Share of US households with different technologies in the home, 1903-2019. Data: <a href="https://ourworldindata.org/technology-adoption">Our World in Data</a></p> 
+      </div>
+      <div id="multiline-chart" class="chart">
+      </div>
+      <div class="text-container">
+        <h1>First header</h1>
+        <p>First block of text</p> 
+        <h1>Second header</h1>
+        <p>First block of text</p> 
+      </div>
+     
+    </section>
+
+    <section class="section-container">
+
+      <div class="title-container">
         <h1>In recent years, Americans have adopted more communication technologies at increasing rates</h1>
-        <p>
-            Share of US households with different technologies in the home, 1903-2019. Data: <a href="https://ourworldindata.org/technology-adoption">Our World in Data</a>
-        </p>
-        <div id="slopegraph"></div>
-    </div>
-    <div class="container">
+        <p>Share of US households with different technologies in the home, 1903-2019. Data: <a href="https://ourworldindata.org/technology-adoption">Our World in Data</a></p>
+      </div>
+      <div id="slopegraph-chart" class="chart">
+      </div>
+      <div class="text-container">
+        <h1>First header</h1>
+        <p>First block of text</p> 
+        <h1>Second header</h1>
+        <p>First block of text</p> 
+      </div>
+
+    </section>
+
+    <section class="section-container">
+
+      <div class="title-container">
         <h1>Americans have increased their communication technology use since 2003</h1>
-        <p>
-            Average minutes US households spend per day with different technologies, 2003-2021. Data: <a href="https://www.bls.gov/tus/">American Time Use Survey</a>
-        </p>
-        <div id="multiline-use-chart"></div>
-    </div>
-    <div class="container">
-        <h1>Stacked bar</h1>
-        <p>
-            NOTE: I would like to translate the multiline graph above (use of communication technology over time) to a stacked bar graph, grouped by year. I've imported the code for a stacked bar graph from observable but am unable to get it to work.
-        </p>
-        <div id="stacked-bar"></div>
-    </div>
-    <div class="container">
+        <p>Average minutes US households spend per day with different technologies, 2003-2021. Data: <a href="https://www.bls.gov/tus/">American Time Use Survey</a></p>
+      </div>
+      <div id="multiline-use-chart" class="chart">
+      </div>
+      <div class="text-container">
+        <h1>First header</h1>
+        <p>First block of text</p> 
+        <h1>Second header</h1>
+        <p>First block of text</p> 
+      </div>
+
+    </section>
+
+    <section class="section-container">
+      
+      <div class="title-container">
+        <h1>Americans have increased their communication technology use since 2003</h1>
+        <p>Average minutes US households spend per day with different technologies, 2003-2021. Data: <a href="https://www.bls.gov/tus/">American Time Use Survey</a></p>
+      </div>
+      <div id="stacked-bar-chart" class="chart">
+      </div>
+      <div class="text-container">
+        <h1>First header</h1>
+        <p>First block of text</p> 
+        <h1>Second header</h1>
+        <p>First block of text</p> 
+      </div>
+    </section>
+
+    <section class="section-container">
+      <div class="title-container">
         <h1>Access to internet has also grown significantly since 2003</h1>
-        <p>
-            Description. Data: <a href="https://www.census.gov/topics/population/computer-internet.html">U.S. Census Bureau</a>
-        </p>
-        <div id="legend"></div>
-        <div id="row1" class="row"></div>
-        <div id="row2" class="row"></div>
-    </div>
+        <p>[TEXT] Data: <a href="https://www.census.gov/topics/population/computer-internet.html">U.S. Census Bureau</a></p>
+      </div>
+      <div id="choropleth-multi-legend" class="legend"></div>
+      <div id="choropleth-multi-row1" class="row"></div>
+      <div id="choropleth-multi-row2" class="row"></div>
+      <div class="text-container">
+        <h1>First header</h1>
+        <p>First block of text</p> 
+        <h1>Second header</h1>
+        <p>First block of text</p> 
+      </div>
+
+    </section>
+
+  </main>
+    
 </body>
+
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="multiline.js"></script>
 <script src="multiline_use.js"></script>

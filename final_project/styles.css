@@ -1,55 +1,93 @@
-* {
-    font-family: 'Work Sans',Arial, Helvetica, sans-serif;
-  }
+.section-container {
+  width: 90%; /* how much width does container take up */
+  max-width: 1200px; /* what is the max width container will extend */
+  margin: 100px auto; /* padding above container */
+}
 
-  #container, .container {
-    max-width: 1040px;
-    margin: 0 auto;
-  }
+/* [[from css guide]] .section-container > .chart, */
+.section-container > .title-container {
+  width: 50%;
+  box-sizing: border-box;
+  justify-content: center;
+}
+.section-container > .text-container {
+  width: 50%;
+  box-sizing: border-box;
+}
 
-  h1  {
-    font-size: 32px;
-    text-transform: none;
-    font-weight: 600;
-  }
+/* .chart, */
+/* .title-container {
+  padding: 10px;
+} */
+/*.text-container {
+  padding: 10px;
+} */
 
-  p {
-    font-size: 16px;
-    text-transform: none;
-    max-width: 700px;
-  }
+.row {
+  column-count: 2;
+}
 
-  #chart, #chart p, #chart span {
-    width: 100%;
-    font-size: 10px;
-  }
+.legend { margin: 30px 0px 50px; }
 
-  svg {
-    max-height: 100vh;
-  }
+.legend svg { margin: 0 auto; }
 
-  .svg-tooltip {
-    background: rgba(69, 77, 93, .9);
-    border-radius: 5px;
-    color: #fff;
-    display: block;
-    font-size: 12px;
-    line-height: 16px;
-    text-transform: none;
-    max-width: 320px;
-    padding: 1rem;
-    position: absolute;
-    text-overflow: ellipsis;
-    white-space: pre;
-    z-index: 300;
-    visibility: hidden;
-  }
+.highlight path { /* color and opacity of path lines upon hover */
+  stroke: steelblue;
+  opacity: 1;
+}
 
-  #legend {
-    margin-top: 50px
-  }
+.highlight text { fill: steelblue; } /* color of path text upon hover */
 
-  #legend svg {
-    margin: 0 auto;
-  }
-  
+.svg-tooltip {
+  background: rgba(69, 77, 93, .9);
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: none;
+  max-width: 320px;
+  padding: 1rem;
+  position: absolute;
+  text-overflow: ellipsis;
+  white-space: pre;
+  z-index: 300;
+  visibility: hidden;
+}
+
+/* [[from multiline.html]]
+  .country { cursor: default; } */
+
+/* [[from multiline.html]]
+  .country path {
+  stroke-width: 1.5;
+  opacity: 0.75;
+} */
+
+
+
+
+
+
+
+a { color: #369; } /* color of hyperlink */
+
+svg { width: 100%; } /* how wide are graphics? */
+
+svg text { /* formatting of in-graphic text */
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+/* [[duplicate of svg text above]]
+text {
+  font-size: 10px;
+  text-transform: uppercase;
+} */
+
+path.domain { display: none; } /* whether to display x- and y-axis lines */
+
+line { /* whether to display horizontal lines extending from y-axis */
+  stroke: rgb(227, 227, 227);
+  stroke-dasharray: 1px;
+}
