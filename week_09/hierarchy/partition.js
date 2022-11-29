@@ -18,7 +18,7 @@ d3.json('flare.json')
 
   let color = d3.scaleOrdinal(d3.quantize(d3.interpolateSpectral, data.children.length + 1));
 
-  let partitionLayout = d3.partition()
+  let partitionLayout = d3.partition() /* instead of d3.tree, use d3.partition, a different type of layout */
     .size([width, height]);
 
   let rootNode = d3.hierarchy(data)

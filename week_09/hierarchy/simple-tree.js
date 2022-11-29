@@ -29,10 +29,10 @@ let svg = d3.select("#chart").append("svg")
   .attr("height", height + margin.top + margin.bottom);
 
 let g = svg.append("g")
-  .attr("transform", `translate(${margin.left},${margin.top})`);
+  .attr("transform", `translate(${margin.left},${margin.top})`); /* purpose is to relocate svg to center of page, move over x and along y */
 
 let treeGraph = d3.tree()
-  .size([width, height]);
+  .size([width, height]); /* 'pass in a size and a width' */
 
 let nodeData = d3.hierarchy(data);
 
@@ -41,6 +41,7 @@ console.log(nodeData)
 let nodes = treeGraph(nodeData);
 
 console.log(nodes.links())
+
 
 let link = g.selectAll('.link')
   .data(nodes.links())
@@ -62,4 +63,5 @@ node.append('circle')
 node.append('text')
   .text(d => d.data.name)
   .attr('x', 12)
-  .attr('dy', '.35em');
+  .attr('dx', '.5em')
+  .attr('dy', '.5em'); /* dy and dx are nudges, to nudge text around */
