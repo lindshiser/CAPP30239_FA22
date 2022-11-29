@@ -68,7 +68,7 @@
   d3.select("#choropleth-multi-legend")
     .node()
     .appendChild(
-      legend(
+      Legend(
         d3.scaleOrdinal(
           ["10", "20", "30", "40", "50", "60", "70", "80", "90+"],
           d3.schemePurples[9]
