@@ -67,5 +67,5 @@ years_passed <- years_passed %>%
   rename(years = coded)
 
 # write csv
-write_csv(df, 'data/cleaned/adoption.csv')
+#write_csv(df, 'data/cleaned/adoption.csv')
 write_csv(years_passed, 'data/cleaned/adoption_origin.csv')
