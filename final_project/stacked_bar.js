@@ -1,6 +1,6 @@
-
-
 d3.csv('data/cleaned/time_use.csv').then(data => {
+
+  activities = data.columns.slice(2);
 
     let chart = StackedBarChart(data, {
         x: d => d.year,
@@ -13,6 +13,9 @@ d3.csv('data/cleaned/time_use.csv').then(data => {
         width,
         height: 500
     });
+
+    data = FileAttachment("us-population-state-age.csv").csv({typed: true});
+    
 
     document.getElementById("stacked-bar-chart").appendChild(chart); // Q: do I need a hashtag?
 });
