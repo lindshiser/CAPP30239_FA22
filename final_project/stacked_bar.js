@@ -1,6 +1,6 @@
 d3.csv('data/cleaned/time_use.csv').then(data => {
 
-  activities = data.columns.slice(2);
+  const activities = new Set(Array.from(data, (d) => d.activity)); /* Code from Sandy */
 
     let chart = StackedBarChart(data, {
         x: d => d.year,
@@ -10,14 +10,9 @@ d3.csv('data/cleaned/time_use.csv').then(data => {
         yLabel: "Minutes",
         zDomain: activities,
         colors: d3.schemeSpectral[activities.length],
-        width,
-        height: 500
-    });
+    });    
 
-    data = FileAttachment("us-population-state-age.csv").csv({typed: true});
-    
-
-    document.getElementById("stacked-bar-chart").appendChild(chart); // Q: do I need a hashtag?
+  document.getElementById("stacked-bar-chart").appendChild(chart); // Q: do I need a hashtag?
 });
 
 // Copyright 2021 Observable, Inc.
