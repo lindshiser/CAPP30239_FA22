@@ -12,7 +12,7 @@ d3.csv('data/cleaned/time_use.csv').then(data => {
         colors: d3.schemeSpectral[activities.length],
     });    
 
-  document.getElementById("stacked-bar-chart").appendChild(chart); // Q: do I need a hashtag?
+  document.getElementById("stacked-chart").appendChild(chart); // Q: do I need a hashtag?
 });
 
 // Copyright 2021 Observable, Inc.

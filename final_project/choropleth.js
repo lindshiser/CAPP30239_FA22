@@ -16,10 +16,10 @@
     d3.json("libs/states-albers-10m.json")
   ]).then(([data, us]) => {
     counties = topojson.feature(us, us.objects.states);
-    createChart(data, "2003", '#choropleth-multi-row1');
-    createChart(data, "2007", '#choropleth-multi-row1');
-    createChart(data, "2010", '#choropleth-multi-row2');
-    createChart(data, "2012", '#choropleth-multi-row2');
+    createChart(data, "2003", '#choropleth-row1');
+    createChart(data, "2007", '#choropleth-row1');
+    createChart(data, "2010", '#choropleth-row2');
+    createChart(data, "2012", '#choropleth-row2');
   });
 
   function createChart(allData, year, elemId) {
@@ -65,7 +65,7 @@
       });
   }
 
-  d3.select("#choropleth-multi-legend")
+  d3.select("#choropleth-legend")
     .node()
     .appendChild(
       Legend(
