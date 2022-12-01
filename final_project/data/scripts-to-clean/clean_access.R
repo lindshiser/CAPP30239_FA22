@@ -5,6 +5,9 @@ library(stringr)
 library(usmap)
 #install.packages('rjson')
 library(rjson)
+library(httr) # get API
+library(jsonlite) # GET API
+
 
 setwd("/Users/lindsayhiser/Documents/Harris/4_FA22/Data Visualization/CAPP30239_FA22/final_project")
 path <- "/Users/lindsayhiser/Documents/Harris/4_FA22/Data Visualization/CAPP30239_FA22/final_project"
@@ -102,4 +105,30 @@ list <- df %>%
 write_csv(df, "choropleth-map/data/access.csv")
 write.csv(state_share, "choropleth-map/data/access_list.csv", row.names = FALSE)
 
-?write_csv()
+#######
+#setwd("/Users/lindsayhiser/Documents/Harris/4_FA22/Data and Programming - R II/final-project-lindsay-hiser")
+res <- GET('api.census.gov/data/2020/acs/acs5/subject?get=NAME,group(S2802)&for=county:*&key=f7376443486af408306554a3976d5eca1a01f83e')
+rawToChar(res$content)
+df <- as.data.frame(
+  fromJSON(rawToChar(res$content))
+)
+colnames(df) <- df[1, ] # replace header with first row of labels
+df <- df[-1, ] # remove redundant row of labels
+df <- df[ ,-3] # remove redundant name col
+
+vars <- tibble(
+  code = c('NAME', 'GEO_ID','S2802_C03_001E'),
+  var = c('county', 'geo_id','share')
+)
+
+df <- df %>%
+  select(any_of(vars$code)) %>%
+  setNames(vars$var)
+
+df <- df %>%
+  separate(geo_id, into = c("REMOVE", "id"), sep = -5) %>%
+  mutate(share = as.numeric(share)) %>%
+  select(id, county, share)
+  
+
+write_csv(df, "data/cleaned/access2020.csv")

@@ -13,7 +13,7 @@ const svg = d3.select("#choropleth")
 
 Promise.all([
   d3.csv("data/cleaned/access2020.csv"),
-  d3.json("libs/states-albers-10m.json")
+  d3.json("libs/counties-albers-10m.json")
 ]).then(([data, us]) => {
   const dataById = {};
 
@@ -23,12 +23,12 @@ Promise.all([
     dataById[d.id] = d;
   }
 
-  const states = topojson.feature(us, us.objects.states);
+  const counties = topojson.feature(us, us.objects.counties);
 
   // Quantize evenly breakups domain into range buckets
   const color = d3.scaleQuantize()
     .domain([0, 100]).nice()
-    .range(d3.schemePurples[9]);
+    .range(d3.schemeBlues[9]);
 
   const path = d3.geoPath();
 
@@ -38,14 +38,14 @@ Promise.all([
       Legend(
         d3.scaleOrdinal(
           ["10", "20", "30", "40", "50", "60", "70", "80", "90+"],
-          d3.schemePurples[9]
+          d3.schemeBlues[9]
         ),
-        { title: "Share of households with internet access (%)" }
+        { title: "Share of Households with internet access (%)" }
       ));
 
   svg.append("g")
     .selectAll("path")
-    .data(states.features)
+    .data(counties.features)
     .join("path")
     .attr("fill", d => (d.id in dataById) ? color(dataById[d.id].share) : '#ccc')
     .attr("d", path)
@@ -53,7 +53,7 @@ Promise.all([
       let info = dataById[d.id];
       tooltip
         .style("visibility", "visible")
-        .html(`${info.state}<br>${info.share}%`)
+        .html(`${info.county}<br>${info.share}%`)
         .style("top", (event.pageY - 10) + "px")
         .style("left", (event.pageX + 10) + "px");
       d3.select(this).attr("fill", "goldenrod");

@@ -33,7 +33,7 @@
 
     const color = d3.scaleQuantize()
       .domain([0, 100]).nice()
-      .range(d3.schemePurples[9]);
+      .range(d3.schemeBlues[9]);
 
     const path = d3.geoPath();
 
@@ -71,7 +71,7 @@
       Legend(
         d3.scaleOrdinal(
           ["10", "20", "30", "40", "50", "60", "70", "80", "90+"],
-          d3.schemePurples[9]
+          d3.schemeBlues[9]
         ),
         { title: "Share of households with internet access (%)" }
       ));
