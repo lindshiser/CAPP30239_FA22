@@ -106,7 +106,7 @@ write_csv(df, "choropleth-map/data/access.csv")
 write.csv(state_share, "choropleth-map/data/access_list.csv", row.names = FALSE)
 
 #######
-#setwd("/Users/lindsayhiser/Documents/Harris/4_FA22/Data and Programming - R II/final-project-lindsay-hiser")
+setwd("/Users/lindsayhiser/Documents/Harris/4_FA22/Data Visualization/CAPP30239_FA22/final_project")
 res <- GET('api.census.gov/data/2020/acs/acs5/subject?get=NAME,group(S2802)&for=county:*&key=f7376443486af408306554a3976d5eca1a01f83e')
 rawToChar(res$content)
 df <- as.data.frame(
