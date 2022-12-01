@@ -9,7 +9,7 @@ d3.csv('data/cleaned/adoption_origin.csv').then(data => {
           xDomain: d3.groupSort(data, D => d3.sum(D, d => d.years), d => d.years),
       });    
   
-    document.getElementById("slope-chart").appendChild(chart); 
+    document.getElementById("#slope-chart").appendChild(chart); 
 
 });
 
@@ -31,8 +31,8 @@ function SlopeChart(data, {
     insetBottom = inset === undefined ? 0 : inset, // additional bottom margin
     labelPadding = 3, // padding from the start or end of the line to label, in pixels
     labelSeparation = 10, // separation in pixels for avoiding label collisions 
-    width = 640, // outer width, in pixels
-    height = 400, // outer height, in pixels
+    width = 575, // outer width, in pixels
+    height = 600, // outer height, in pixels
     xDomain, // array of x-values
     xRange = [marginLeft, width - marginRight], // [left, right]
     xPadding = 0.5, // padding for the x-scale (for first and last column)
@@ -88,8 +88,8 @@ function SlopeChart(data, {
         .attr("height", height)
         .attr("viewBox", [0, 0, width, height])
         .attr("style", "max-width: 100%; height: auto; height: intrinsic;")
-        .attr("font-family", "sans-serif")
-        .attr("font-size", 10);
+        // .attr("font-family", "sans-serif")
+        // .attr("font-size", 10);
   
     svg.append("g")
         .attr("transform", `translate(0,${marginTop})`)

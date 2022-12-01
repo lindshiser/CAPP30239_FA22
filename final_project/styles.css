@@ -1,31 +1,54 @@
-.section-container {
-  width: 90%; /* how much width does container take up */
-  max-width: 1200px; /* what is the max width container will extend */
+.visualization {
+  font-family: 'Work Sans',Arial, Helvetica, sans-serif;
   margin: 100px auto; /* padding above container */
+  max-width: 1000px; /* what is the max width container will extend */
+  width: 90%; /* how much width does container take up */
 }
 
-/* [[from css guide]] .section-container > .chart, */
-.section-container > .title-container {
-  width: 50%;
-  box-sizing: border-box;
-  justify-content: center;
-}
-.section-container > .text-container {
-  width: 50%;
-  box-sizing: border-box;
+.title {
+  width: 100%;
+  text-align: center;
 }
 
-/* .chart, */
-/* .title-container {
-  padding: 10px;
-} */
-/*.text-container {
-  padding: 10px;
-} */
-
-.row {
-  column-count: 2;
+.title h1 {
+  font-size: 24px;
 }
+
+.title p {
+  font-size: 16px;
+}
+
+.chart {
+  width: 100%;
+}
+
+.caption {
+  width: 90%;
+  font-size: 14px;
+  text-align: right;
+}
+
+.paragraph {
+  max-width: 1000px;
+  width: 75%;
+  margin: 80px auto;
+  /* max-width: 1200px; */
+}
+
+.body  {
+  width: 70%;
+  text-align: left;
+}
+
+.body h1 {
+  font-size: 30px;
+}
+
+.body p {
+  font-size: 20px;
+}
+
+.row {column-count: 2;}
 
 .legend { margin: 30px 0px 50px; }
 
@@ -55,21 +78,6 @@
   visibility: hidden;
 }
 
-/* [[from multiline.html]]
-  .country { cursor: default; } */
-
-/* [[from multiline.html]]
-  .country path {
-  stroke-width: 1.5;
-  opacity: 0.75;
-} */
-
-
-
-
-
-
-
 a { color: #369; } /* color of hyperlink */
 
 svg { width: 100%; } /* how wide are graphics? */
@@ -79,15 +87,11 @@ svg text { /* formatting of in-graphic text */
   text-transform: uppercase;
 }
 
-/* [[duplicate of svg text above]]
-text {
-  font-size: 10px;
-  text-transform: uppercase;
-} */
-
 path.domain { display: none; } /* whether to display x- and y-axis lines */
 
 line { /* whether to display horizontal lines extending from y-axis */
   stroke: rgb(227, 227, 227);
-  stroke-dasharray: 1px;
+  stroke-dasharray: 10px;
 }
+
+

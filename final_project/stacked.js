@@ -27,11 +27,11 @@ function StackedBarChart(data, {
   marginRight = 0, // right margin, in pixels
   marginBottom = 30, // bottom margin, in pixels
   marginLeft = 40, // left margin, in pixels
-  width = 640, // outer width, in pixels
+  width = 550, // outer width, in pixels
   height = 400, // outer height, in pixels
   xDomain, // array of x-values
   xRange = [marginLeft, width - marginRight], // [left, right]
-  xPadding = 0.1, // amount of x-range to reserve to separate bars
+  xPadding = 0.3, // amount of x-range to reserve to separate bars
   yType = d3.scaleLinear, // type of y-scale
   yDomain, // [ymin, ymax]
   yRange = [height - marginBottom, marginTop], // [bottom, top]

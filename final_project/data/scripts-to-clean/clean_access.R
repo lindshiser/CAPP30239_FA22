@@ -105,30 +105,58 @@ list <- df %>%
 write_csv(df, "choropleth-map/data/access.csv")
 write.csv(state_share, "choropleth-map/data/access_list.csv", row.names = FALSE)
 
-#######
+####### for 2020
 setwd("/Users/lindsayhiser/Documents/Harris/4_FA22/Data Visualization/CAPP30239_FA22/final_project")
-res <- GET('api.census.gov/data/2020/acs/acs5/subject?get=NAME,group(S2802)&for=county:*&key=f7376443486af408306554a3976d5eca1a01f83e')
-rawToChar(res$content)
-df <- as.data.frame(
-  fromJSON(rawToChar(res$content))
+res20 <- GET('api.census.gov/data/2020/acs/acs5/subject?get=NAME,group(S2802)&for=county:*&key=f7376443486af408306554a3976d5eca1a01f83e')
+rawToChar(res20$content)
+df20 <- as.data.frame(
+  fromJSON(rawToChar(res20$content))
 )
-colnames(df) <- df[1, ] # replace header with first row of labels
-df <- df[-1, ] # remove redundant row of labels
-df <- df[ ,-3] # remove redundant name col
+colnames(df20) <- df20[1, ] # replace header with first row of labels
+df20 <- df20[-1, ] # remove redundant row of labels
+df20 <- df20[ ,-3] # remove redundant name col
 
 vars <- tibble(
   code = c('NAME', 'GEO_ID','S2802_C03_001E'),
   var = c('county', 'geo_id','share')
 )
 
-df <- df %>%
+df20 <- df20 %>%
   select(any_of(vars$code)) %>%
   setNames(vars$var)
 
-df <- df %>%
+df20 <- df20 %>%
   separate(geo_id, into = c("REMOVE", "id"), sep = -5) %>%
   mutate(share = as.numeric(share)) %>%
   select(id, county, share)
   
 
-write_csv(df, "data/cleaned/access2020.csv")
+write_csv(df20, "data/cleaned/access2020.csv")
+
+
+### for 2017
+res17 <- GET('api.census.gov/data/2017/acs/acs5/subject?get=NAME,group(S2802)&for=county:*&key=f7376443486af408306554a3976d5eca1a01f83e')
+rawToChar(res17$content)
+df17 <- as.data.frame(
+  fromJSON(rawToChar(res17$content))
+)
+colnames(df17) <- df17[1, ] # replace header with first row of labels
+df17 <- df17[-1, ] # remove redundant row of labels
+df17 <- df17[ ,-3] # remove redundant name col
+
+vars <- tibble(
+  code = c('NAME', 'GEO_ID','S2802_C03_001E'),
+  var = c('county', 'geo_id','share')
+)
+
+df17 <- df17 %>%
+  select(any_of(vars$code)) %>%
+  setNames(vars$var)
+
+df17 <- df17 %>%
+  separate(geo_id, into = c("REMOVE", "id"), sep = -5) %>%
+  mutate(share = as.numeric(share)) %>%
+  select(id, county, share)
+
+
+write_csv(df17, "data/cleaned/access2017.csv")
