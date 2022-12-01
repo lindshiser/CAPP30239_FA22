@@ -1,4 +1,4 @@
-d3.csv('data/cleaned/time_use.csv').then(data => {
+d3.csv('data/cleaned/timeuse_inclusv.csv').then(data => {
 
   const activities = new Set(Array.from(data, (d) => d.activity)); /* Code from Sandy */
 
@@ -6,11 +6,11 @@ d3.csv('data/cleaned/time_use.csv').then(data => {
         x: d => d.year,
         y: d => d.minutes,
         z: d => d.activity,
-        xDomain: d3.groupSort(data, D => d3.sum(D, d => -d.minutes), d => d.year),
+        xDomain: d3.groupSort(data, D => d3.sum(D, d => d.year), d => d.year),
         yLabel: "Minutes",
         zDomain: activities,
         colors: d3.schemeSpectral[activities.length],
-    });    
+    }); 
 
   document.getElementById("stacked-chart").appendChild(chart); // Q: do I need a hashtag?
 });

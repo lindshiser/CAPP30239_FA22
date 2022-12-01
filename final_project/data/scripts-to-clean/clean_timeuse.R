@@ -26,9 +26,13 @@ df <- df %>%
          'phone_family' = 't160101',
          'phone_friends' = 't160102')
 
-# calculate averages per activity, pivot
-df[df == 0] <- NA # replace zeros with NAs
-df <- df %>%
+# divide df to inclusive and exclusie
+df_inc <- df
+df_exc <- df
+
+# calculate averages per activity, EXCLUSIVE of those who don't use
+df_exc[df_exc == 0] <- NA # replace zeros with NAs
+df_exc <- df_exc %>%
   group_by(year) %>%
   summarise('Watching TV/movies' = mean(tv, na.rm = TRUE),
             'Listening to radio' = mean(radio, na.rm = TRUE),
@@ -38,8 +42,21 @@ df <- df %>%
             'Using phone (friends)' = mean(phone_friends, na.rm = TRUE)) %>%
   pivot_longer(c('Watching TV/movies', 'Listening to radio', 'Listening to music', 'Using computer', 'Using phone (family)', 'Using phone (friends)'), 
                names_to = "activity", values_to = "minutes")
-df$minutes <- as.integer(df$minutes)
+df_exc$minutes <- as.integer(df_exc$minutes)
 
-write_csv(df, "multiline-use/time_use.csv")
+# calculate averages per activity, INCLUSIVE of those who don't use
+df_inc <- df_inc %>%
+  group_by(year) %>%
+  summarise('Watching TV/movies' = mean(tv, na.rm = TRUE),
+            'Listening to radio' = mean(radio, na.rm = TRUE),
+            'Listening to music' = mean(music, na.rm = TRUE),
+            'Using computer' = mean(computer, na.rm = TRUE),
+            'Using phone (family)' = mean(phone_family, na.rm = TRUE),
+            'Using phone (friends)' = mean(phone_friends, na.rm = TRUE)) %>%
+  pivot_longer(c('Watching TV/movies', 'Listening to radio', 'Listening to music', 'Using computer', 'Using phone (family)', 'Using phone (friends)'), 
+               names_to = "activity", values_to = "minutes")
+df_inc$minutes <- as.integer(df_inc$minutes)
 
+write_csv(df_inc, "data/cleaned/timeuse_inclusv.csv")
+write_csv(df_exc, "data/cleaned/timeuse_exclusv.csv")
 

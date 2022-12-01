@@ -1,69 +1,36 @@
-(function choropleth_multiples() {
+const tooltip = d3.select("body")
+  .append("div")
+  .attr("class", "svg-tooltip")
+  .style("position", "absolute")
+  .style("visibility", "hidden");
 
-  const tooltip = d3.select("body")
-    .append("div")
-    .attr("class", "svg-tooltip")
-    .style("position", "absolute")
-    .style("visibility", "hidden");
+const height = 610,
+  width = 975;
 
-  const height = 610,
-    width = 975;
+const svg = d3.select("#choropleth")
+  .append("svg")
+  .attr("viewBox", [0, 0, width, height]);
 
-  let states;
+Promise.all([
+  d3.csv("data/cleaned/access2020.csv"),
+  d3.json("libs/states-albers-10m.json")
+]).then(([data, us]) => {
+  const dataById = {};
 
-  Promise.all([
-    d3.json("data/cleaned/access.json"),
-    d3.json("libs/states-albers-10m.json")
-  ]).then(([data, us]) => {
-    counties = topojson.feature(us, us.objects.states);
-    createChart(data, "2003", '#choropleth-row1');
-    createChart(data, "2007", '#choropleth-row1');
-    createChart(data, "2010", '#choropleth-row2');
-    createChart(data, "2012", '#choropleth-row2');
-  });
-
-  function createChart(allData, year, elemId) {
-    const data = allData[year];
-    const dataById = {};
-
-    for (let d of data) {
-      d.share = +d.share;
-      dataById[d.id] = d;
-    }
-
-    const color = d3.scaleQuantize()
-      .domain([0, 100]).nice()
-      .range(d3.schemePurples[9]);
-
-    const path = d3.geoPath();
-
-    const svg = d3.select(elemId)
-      .append("div")
-      .html(`<h3>${year}</h3>`)
-      .attr("class", "chart")
-      .append("svg")
-      .attr("viewBox", [0, 0, width, height]);
-
-    svg.append("g")
-      .selectAll("path")
-      .data(counties.features) // Q: should this be 'states.features'?
-      .join("path")
-      .attr("fill", d => (d.id in dataById) ? color(dataById[d.id].share) : '#ccc')
-      .attr("d", path)
-      .on("mousemove", function (event, d) {
-        let info = dataById[d.id];
-        tooltip
-          .style("visibility", "visible")
-          .html(`${info?.state}<br>${info?.share}%`)
-          .style("top", (event.pageY - 10) + "px")
-          .style("left", (event.pageX + 10) + "px");
-        d3.select(this).attr("fill", "goldenrod");
-      })
-      .on("mouseout", function () {
-        tooltip.style("visibility", "hidden");
-        d3.select(this).attr("fill", d => (d.id in dataById) ? color(dataById[d.id].share) : '#ccc');
-      });
+  for (let d of data) {
+    d.share = +d.share;
+    //making a lookup table from the array (unemployment data)
+    dataById[d.id] = d;
   }
+
+  const states = topojson.feature(us, us.objects.states);
+
+  // Quantize evenly breakups domain into range buckets
+  const color = d3.scaleQuantize()
+    .domain([0, 100]).nice()
+    .range(d3.schemePurples[9]);
+
+  const path = d3.geoPath();
 
   d3.select("#choropleth-legend")
     .node()
@@ -76,5 +43,23 @@
         { title: "Share of households with internet access (%)" }
       ));
 
-})();
-
+  svg.append("g")
+    .selectAll("path")
+    .data(states.features)
+    .join("path")
+    .attr("fill", d => (d.id in dataById) ? color(dataById[d.id].share) : '#ccc')
+    .attr("d", path)
+    .on("mousemove", function (event, d) {
+      let info = dataById[d.id];
+      tooltip
+        .style("visibility", "visible")
+        .html(`${info.state}<br>${info.share}%`)
+        .style("top", (event.pageY - 10) + "px")
+        .style("left", (event.pageX + 10) + "px");
+      d3.select(this).attr("fill", "goldenrod");
+    })
+    .on("mouseout", function () {
+      tooltip.style("visibility", "hidden");
+      d3.select(this).attr("fill", d => (d.id in dataById) ? color(dataById[d.id].share) : '#ccc');
+    });
+});

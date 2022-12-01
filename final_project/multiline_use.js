@@ -9,7 +9,7 @@
     .append("svg")
     .attr("viewBox", [0, 0, width, height]);
 
-  d3.csv("data/cleaned/time_use.csv").then(data => {
+  d3.csv("data/cleaned/timeuse_exclusv.csv").then(data => {
     
     let timeParse = d3.timeParse("%Y");
 

@@ -6,6 +6,7 @@ d3.csv('data/cleaned/adoption_origin.csv').then(data => {
           x: d => d.years,
           y: d => d.share,
           z: d => d.technology,
+          xDomain: d3.groupSort(data, D => d3.sum(D, d => d.years), d => d.years),
       });    
   
     document.getElementById("slope-chart").appendChild(chart); 

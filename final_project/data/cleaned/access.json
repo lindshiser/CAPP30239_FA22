@@ -1792,5 +1792,262 @@
       "state": "Wyoming",
       "share": 82.9
     }
+  ],
+  "2020": [
+    {
+      "id": "02",
+      "state": "Alaska",
+      "share": 89.9
+    },
+    {
+      "id": "01",
+      "state": "Alabama",
+      "share": 83.9
+    },
+    {
+      "id": "04",
+      "state": "Arizona",
+      "share": 88.6
+    },
+    {
+      "id": "05",
+      "state": "Arkansas",
+      "share": 81.0
+    },
+    {
+      "id": "06",
+      "state": "California",
+      "share": 91.3
+    },
+    {
+      "id": "08",
+      "state": "Colorado",
+      "share": 92.2
+    },
+    {
+      "id": "09",
+      "state": "Connecticut",
+      "share": 91.1
+    },
+    {
+      "id": "10",
+      "state": "Delaware",
+      "share": 90.0
+    },
+    {
+      "id": "11",
+      "state": "District of Columbia",
+      "share": 87.2
+    },
+    {
+      "id": "12",
+      "state": "Florida",
+      "share": 88.0
+    },
+    {
+      "id": "13",
+      "state": "Georgia",
+      "share": 87.3
+    },
+    {
+      "id": "15",
+      "state": "Hawaii",
+      "share": 90.4
+    },
+    {
+      "id": "16",
+      "state": "Idaho",
+      "share": 90.1
+    },
+    {
+      "id": "17",
+      "state": "Illinois",
+      "share": 89.3
+    },
+    {
+      "id": "18",
+      "state": "Indiana",
+      "share": 86.9
+    },
+    {
+      "id": "19",
+      "state": "Iowa",
+      "share": 87.5
+    },
+    {
+      "id": "20",
+      "state": "Kansas",
+      "share": 88.5
+    },
+    {
+      "id": "21",
+      "state": "Kentucky",
+      "share": 85.8
+    },
+    {
+      "id": "22",
+      "state": "Louisiana",
+      "share": 83.4
+    },
+    {
+      "id": "23",
+      "state": "Maine",
+      "share": 88.4
+    },
+    {
+      "id": "24",
+      "state": "Maryland",
+      "share": 91.4
+    },
+    {
+      "id": "25",
+      "state": "Massachusetts",
+      "share": 91.6
+    },
+    {
+      "id": "26",
+      "state": "Michigan",
+      "share": 88.1
+    },
+    {
+      "id": "27",
+      "state": "Minnesota",
+      "share": 90.8
+    },
+    {
+      "id": "28",
+      "state": "Mississippi",
+      "share": 80.4
+    },
+    {
+      "id": "29",
+      "state": "Missouri",
+      "share": 86.9
+    },
+    {
+      "id": "30",
+      "state": "Montana",
+      "share": 87.2
+    },
+    {
+      "id": "31",
+      "state": "Nebraska",
+      "share": 89.8
+    },
+    {
+      "id": "32",
+      "state": "Nevada",
+      "share": 88.2
+    },
+    {
+      "id": "33",
+      "state": "New Hampshire",
+      "share": 92.0
+    },
+    {
+      "id": "34",
+      "state": "New Jersey",
+      "share": 90.8
+    },
+    {
+      "id": "35",
+      "state": "New Mexico",
+      "share": 80.9
+    },
+    {
+      "id": "36",
+      "state": "New York",
+      "share": 88.4
+    },
+    {
+      "id": "37",
+      "state": "North Carolina",
+      "share": 86.9
+    },
+    {
+      "id": "38",
+      "state": "North Dakota",
+      "share": 87.1
+    },
+    {
+      "id": "39",
+      "state": "Ohio",
+      "share": 88.3
+    },
+    {
+      "id": "40",
+      "state": "Oklahoma",
+      "share": 85.4
+    },
+    {
+      "id": "41",
+      "state": "Oregon",
+      "share": 91.2
+    },
+    {
+      "id": "42",
+      "state": "Pennsylvania",
+      "share": 88.0
+    },
+    {
+      "id": "44",
+      "state": "Rhode Island",
+      "share": 90.4
+    },
+    {
+      "id": "45",
+      "state": "South Carolina",
+      "share": 85.1
+    },
+    {
+      "id": "46",
+      "state": "South Dakota",
+      "share": 86.5
+    },
+    {
+      "id": "47",
+      "state": "Tennessee",
+      "share": 85.4
+    },
+    {
+      "id": "48",
+      "state": "Texas",
+      "share": 87.4
+    },
+    {
+      "id": "49",
+      "state": "Utah",
+      "share": 92.2
+    },
+    {
+      "id": "51",
+      "state": "Virginia",
+      "share": 89.4
+    },
+    {
+      "id": "50",
+      "state": "Vermont",
+      "share": 86.8
+    },
+    {
+      "id": "53",
+      "state": "Washington",
+      "share": 92.8
+    },
+    {
+      "id": "54",
+      "state": "West Virginia",
+      "share": 83.7
+    },
+    {
+      "id": "55",
+      "state": "Wisconsin",
+      "share": 88.8
+    },
+    {
+      "id": "56",
+      "state": "Wyoming",
+      "share": 89.2
+    }
   ]
 }

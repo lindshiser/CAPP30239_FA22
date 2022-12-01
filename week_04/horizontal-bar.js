@@ -7,10 +7,10 @@ d3.csv("covid.csv").then(data => {      // uses a promise, .then, which is JS */
     };
 
     // to rank by highest number of cases
-    data.sort((a, b) => b.cases - a.cases); 
+    // data.sort((a, b) => b.cases - a.cases); 
 
     // to rank by country, isntead
-    // data.sort((a, b) => d3.ascending(a.country, b.country));
+    data.sort((a, b) => d3.ascending(a.country, b.country));
 
     const height = 600,
           width = 800, // width is a variable (in blue)
