@@ -100,11 +100,11 @@ function StackedBarChart(data, {
       .call(yAxis)
       .call(g => g.select(".domain").remove())
       .call(g => g.selectAll(".tick line").clone()
-          .attr("stroke-opacity", 0.1))
+          .attr("stroke-opacity", 0.5))
       .call(g => g.append("text")
           .attr("x", -marginLeft)
-          .attr("y", 10)
-          .attr("fill", "currentColor")
+          .attr("y", 30)
+          .attr("fill", "#333")
           .attr("text-anchor", "start")
           .text(yLabel));
   

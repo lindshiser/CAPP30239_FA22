@@ -31,8 +31,8 @@ function SlopeChart(data, {
     insetBottom = inset === undefined ? 0 : inset, // additional bottom margin
     labelPadding = 3, // padding from the start or end of the line to label, in pixels
     labelSeparation = 10, // separation in pixels for avoiding label collisions 
-    width = 575, // outer width, in pixels
-    height = 600, // outer height, in pixels
+    width = 650, // outer width, in pixels
+    height = 400, // outer height, in pixels
     xDomain, // array of x-values
     xRange = [marginLeft, width - marginRight], // [left, right]
     xPadding = 0.5, // padding for the x-scale (for first and last column)
