@@ -40,7 +40,7 @@ function StackedBarChart(data, {
   order = d3.stackOrderNone, // stack order method
   yFormat, // a format specifier string for the y-axis
   yLabel, // a label for the y-axis
-  colors = d3.schemeTableau10, // array of colors
+  colors = d3.schemePaired, // array of colors 
 } = {}) {
   // Compute values.
   const X = d3.map(data, x);
