@@ -16,10 +16,10 @@
     d3.json("libs/states-albers-10m.json")
   ]).then(([data, us]) => {
     states = topojson.feature(us, us.objects.states);
+    createChart(data, "2001", '#choropleth-multi-row1');
     createChart(data, "2003", '#choropleth-multi-row1');
-    createChart(data, "2007", '#choropleth-multi-row1');
+    createChart(data, "2007", '#choropleth-multi-row2');
     createChart(data, "2010", '#choropleth-multi-row2');
-    createChart(data, "2012", '#choropleth-multi-row2');
   });
 
   function createChart(allData, year, elemId) {
