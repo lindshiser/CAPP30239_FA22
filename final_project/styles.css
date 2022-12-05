@@ -1,57 +1,110 @@
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+
+.paragraph {
+  font-family: 'Fira Sans', serif;
+  font-weight: 350;
+  max-width: 1000px;
+  width: 90%;
+  margin: 80px auto;
+}
+
+    .page-title {
+      text-align: center;
+      margin: 200px auto;
+    }
+
+        .page-title h1 {
+          font-size: 58px;
+        }
+
+        .page-title h2 {
+          font-size: 38px;
+          font-weight: 300;
+          font-style: italic;
+
+        }
+
+        .page-title p {
+          font-size: 18px;
+        }
+
+    .body  {
+      width: 75%;
+      text-align: left;
+    }
+
+        .body h1 {
+          font-size: 32px;
+        }
+
+        .body p {
+          font-size: 20px;
+          line-height: 1.5;
+        }
+
+    .page-process {
+      margin: 120px;
+    }
+
+        .page-process h1 {
+          text-align: center;
+          font-size: 40px;
+        }
+
+        .page-process h2 {
+          text-align: center;
+          font-size: 28px;
+          font-weight: 300;
+          font-style: italic;
+        }
+
+        .page-process p {
+          text-align: left;
+          font-size: 18px;
+          line-height: 1.6;
+        }
+
 .visualization {
-  font-family: 'Work Sans',Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Helvetica, sans-serif;
   margin: 100px auto; /* padding above container */
   max-width: 1000px; /* what is the max width container will extend */
   width: 90%; /* how much width does container take up */
 }
 
-.title {
-  width: 100%;
-  text-align: center;
-}
+    .title {
+      text-align: center;
+      width: 60%;
+      margin: 20px auto;
+    }
 
-.title h1 {
-  font-size: 24px;
-}
+        .title h1 {
+          font-size: 24px;
+        }
 
-.title p {
-  font-size: 16px;
-}
+        .title p {
+          font-size: 16px;
+        }
 
-.chart {
-  width: 100%;
-  font-size:px;
-}
+    .chart {
+      width: 90%;
+      margin: 20px auto;
+      font-size: 12px;
+    }
 
-.caption {
-  width: 90%;
-  font-size: 14px;
-  text-align: right;
-}
+    .caption {
+      width: 90%;
+      font-size: 14px;
+      text-align: right;
+    }
 
-.paragraph {
-  max-width: 1000px;
-  width: 75%;
-  margin: 80px auto;
-  /* max-width: 1200px; */
-}
+    .row {column-count: 2;}
 
-.body  {
-  width: 70%;
-  text-align: left;
-}
-
-.body h1 {
-  font-size: 30px;
-}
-
-.body p {
-  font-size: 20px;
-}
-
-.row {column-count: 2;}
-
-.legend { margin: 30px 0px 50px; }
+    .legend { 
+      margin: 30px 0px 50px;
+    }
 
 .legend svg { margin: 0 auto; }
 
@@ -77,15 +130,15 @@
   white-space: pre;
   z-index: 300;
   visibility: hidden;
+  font-family: 'Inter', Helvetica, sans-serif;
 }
 
-a { color: #369; } /* color of hyperlink */
+a { color: rgb(0, 86, 172); } /* color of hyperlink */
 
 svg { width: 100%; } /* how wide are graphics? */
 
 svg text { /* formatting of in-graphic text */
   font-size: 10px;
-  text-transform: uppercase;
 }
 
 path.domain { display: none; } /* whether to display x- and y-axis lines */
