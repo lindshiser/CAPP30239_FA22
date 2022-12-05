@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(245, 245, 245);
+}
+
 :root { font-family: 'Inter', sans-serif; }
 @supports (font-variation-settings: normal) {
   :root { font-family: 'Inter var', sans-serif; }
@@ -145,7 +149,7 @@ path.domain { display: none; } /* whether to display x- and y-axis lines */
 
 line { /* whether to display horizontal lines extending from y-axis */
   stroke: rgb(227, 227, 227);
-  stroke-dasharray: 10px;
+  stroke-dasharray: 5px;
 }
 
 

@@ -1,7 +1,5 @@
 d3.csv('data/cleaned/adoption_origin.csv').then(data => {
 
-    /* const activities = new Set(Array.from(data, (d) => d.activity)); */
-  
       let chart = SlopeChart(data, {
           x: d => d.years,
           y: d => d.share,
@@ -88,8 +86,6 @@ function SlopeChart(data, {
         .attr("height", height)
         .attr("viewBox", [0, 0, width, height])
         .attr("style", "max-width: 100%; height: auto; height: intrinsic;")
-        // .attr("font-family", "sans-serif")
-        // .attr("font-size", 10);
   
     svg.append("g")
         .attr("transform", `translate(0,${marginTop})`)

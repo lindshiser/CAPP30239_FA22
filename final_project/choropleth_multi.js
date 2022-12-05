@@ -46,7 +46,7 @@
 
     svg.append("g")
       .selectAll("path")
-      .data(states.features) // Q: should this be 'states.features'?
+      .data(states.features)
       .join("path")
       .attr("fill", d => (d.id in dataById) ? color(dataById[d.id].share) : '#ccc')
       .attr("d", path)

@@ -51,7 +51,7 @@
           d3.select(this).classed("highlight", true);
         });
 
-      if (technology === "Landline") { 
+      if (technology === "Landline") {  // Highlight when mouse is out of hover range
         g.classed("highlight", true);
       }
 

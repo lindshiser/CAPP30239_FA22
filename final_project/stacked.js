@@ -1,6 +1,6 @@
 d3.csv('data/cleaned/timeuse_inclusv.csv').then(data => {
 
-  const activities = new Set(Array.from(data, (d) => d.activity)); /* Code from Sandy */
+  const activities = new Set(Array.from(data, (d) => d.activity));
 
     let chart = StackedBarChart(data, {
         x: d => d.year,
@@ -12,7 +12,7 @@ d3.csv('data/cleaned/timeuse_inclusv.csv').then(data => {
         colors: d3.schemeSpectral[activities.length],
     }); 
 
-  document.getElementById("stacked-chart").appendChild(chart); // Q: do I need a hashtag?
+  document.getElementById("stacked-chart").appendChild(chart);
 });
 
 // Copyright 2021 Observable, Inc.
