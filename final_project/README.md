@@ -1,26 +1,35 @@
-# Final Project
+# About The Project
 
-For my final project, I will be visualizing technology adoption in American households throughout the 21st century.
 
-## Topic Overview
+This project was completed as part of the final course deliverable for CAPP 30239: Data Visualization. Datasets were accessed and cleaned using R. Visualizations were created using the [D3.js](https://d3js.org/) JavaScript library. Page layout and style were built using HTML and CSS.
+
+[View the finished project here.](https://lindshiser.github.io/CAPP30239_FA22/final_project/visualization.html)
+
+This folder contains all project files, outlined below. 
+- [visualization.html](https://github.com/lindshiser/CAPP30239_FA22/blob/main/final_project/visualization.html): Project HTML
+- [styles.css](https://github.com/lindshiser/CAPP30239_FA22/blob/main/final_project/styles.css): Project CSS
+- [choropleth.js](https://github.com/lindshiser/CAPP30239_FA22/blob/main/final_project/choropleth.js): Choropleth map visualizing the share of population in each county with internet access in the household in 2020.
+- [choropleth-multi.js](https://github.com/lindshiser/CAPP30239_FA22/blob/main/final_project/choropleth_multi.js): Choropleth multiples visualizing the share of population in each state with internet access in the household.
+- [multiline.js](https://github.com/lindshiser/CAPP30239_FA22/blob/main/final_project/multiline.js): Multiline chart visualizing the share of US households with various technologies in the home, 1903-2019.
+- [multiline_use.js](https://github.com/lindshiser/CAPP30239_FA22/blob/main/final_project/multiline_use.js): Multiline chart visualizing the average minutes spent per day using communication technologies.
+- [slope.js](https://github.com/lindshiser/CAPP30239_FA22/blob/main/final_project/slope.js): Slope chart visualizing the share of US households with different technologies in the home, at different milestones.
+- [stacked.js](https://github.com/lindshiser/CAPP30239_FA22/blob/main/final_project/stacked.js): Stacked bar chart visualizing the totle minutes US households, on average, spend per day using communication technologies, 2003-2021.
+
+Visit the [data](https://github.com/lindshiser/CAPP30239_FA22/tree/main/final_project/data) and [libs](https://github.com/lindshiser/CAPP30239_FA22/tree/main/final_project/libs) folders to learn more about the data used in this project.
+
+## Topic
+
+For my final project, I visualize technology adoption and use in American households as a means of understanding the ubiquitous nature of today's communication technologies.
 
 As a consumer of information in the 21st century, it feels as though new technologies are quickly and consistently being adopted into American households while other technologies become obsolete. Recent technologies like computers, cell phones,  and tablets, for example, have been embraced by today's “information economy” and demand increasingly more of our time and attention.
 
 My research will seek to answer the following questions:
 - How do these recent technologies compare to older technologies, in both their rates of adoption and time usage? 
-- Are Americans’ perceptions, thatour current technological landscape is ever-changing, unique to our time, or are they consistent with communication technologies of the past? 
+- Are Americans’ perceptions, that our current technological landscape is ever-changing, unique to our time, or are they consistent with communication technologies of the past? 
 - Can these perceptions be explained by the rate of adoption, or rather the increase in time usage compared to other technologies? 
 
-## Data Sources
+## Story and Visualizations
 
-**American Time Use Survey (ATUS), *U.S. Census Bureau***
+The story expressed in this project uses insights from well-regarded population surveys to understand trends in American adoption and use of communication technologies. The scope of this project is more investigative than argumentative; it seeks to answer the same question, “Why is technology ubiquitous,” through three perspectives: adoption, access, and time. Each perspective explores and interrogates the mixed sentiment that technology is ever-present, and expanding still. This project embraces the idea that different readers may resonate with the different explanations expressed, given their own experiences with technology.
 
-The [American Time Use Survey (ATUS)](https://www.census.gov/programs-surveys/atus.html) measures the amount of time perople spend doing various activities, such as paid work, childcare, volunteering, and socializaing. For this project, I will be using data on how much time American households report using various technologies. Data was collected as early as 2001 and as late as 2012.
-
-**Current Population Survey (CPS), *U.S. Census Bureau***
-
-The [Current Population Survey (CPS)](https://www.census.gov/programs-surveys/cps.html) is the primary source of labor force statistics for the population of the United States. Respondents answered questions about [internet use](https://www.census.gov/topics/population/computer-internet/about.html) nearly every year from 2000-2010.
-
-**Technology adoption in US households, *Our World in Data***
-
-Researchers Hannah Ritchie and Max Roser at *Our World in Data* constructed a dataset compiled from multiple sources that constructs a broad overview of [technology adoption in the United States](https://ourworldindata.org/technology-adoption), beginning as early as 1860. For the purposes of this project, I will focus on technologies originating in the mid-20th century.
+Visualizations were key to the success of this project. Chart type, interaction, color, and labels were all specially chosen to engage and inform the reader. Time was a universal theme in this project and is likewise present in all visualizations. While the section about adoption used a timeline that extended backward into the earlier 20th century, most visualizations were focused on the last two decades. This choice was made to emphasize the rapid progression of technology in recent years without forgetting that impressive technological adoption in America is not a new phenomenon.
