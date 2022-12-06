@@ -15,8 +15,6 @@ This folder contains all project files, outlined below.
 - [slope.js](https://github.com/lindshiser/CAPP30239_FA22/blob/main/final_project/slope.js): Slope chart visualizing the share of US households with different technologies in the home, at different milestones.
 - [stacked.js](https://github.com/lindshiser/CAPP30239_FA22/blob/main/final_project/stacked.js): Stacked bar chart visualizing the totle minutes US households, on average, spend per day using communication technologies, 2003-2021.
 
-Visit the [data](https://github.com/lindshiser/CAPP30239_FA22/tree/main/final_project/data) and [libs](https://github.com/lindshiser/CAPP30239_FA22/tree/main/final_project/libs) folders to learn more about the data used in this project.
-
 ## Topic
 
 For my final project, I visualize technology adoption and use in American households as a means of understanding the ubiquitous nature of today's communication technologies.
@@ -27,6 +25,12 @@ My research will seek to answer the following questions:
 - How do these recent technologies compare to older technologies, in both their rates of adoption and time usage? 
 - Are Americans’ perceptions, that our current technological landscape is ever-changing, unique to our time, or are they consistent with communication technologies of the past? 
 - Can these perceptions be explained by the rate of adoption, or rather the increase in time usage compared to other technologies? 
+
+## Datasets
+
+To understand how the American population adopts and uses technologies, I used various data collected by the [United States Census Bureau](https://www.census.gov/about/what.html) and the [Bureau of Labor Statistics (BLS)](https://www.bls.gov/bls/infohome.htm). Data on internet access was collected from the [Current Population Survey (CPS)](https://www.census.gov/programs-surveys/cps/about.html) and the [American Community Survey (ACS)](https://www.census.gov/programs-surveys/acs/about.html). Time use data was collected from the [American Time Use Survey (ATUS)](https://www.census.gov/programs-surveys/atus.html). Links to specific datasets used are included in each visualization’s caption.
+
+Data about technology adoption was collected from research at [Our World in Data](https://ourworldindata.org/) on the diffusion of different technologies around the world. In their research, Hannah Ritchie and Max Roser assembled a dataset based on relevant sources shared by [Horace Dediu](http://www.asymco.com/author/asymco/), who studies technological change over time. Material used in this project was specific to American households’ adoption of communication technologies only.
 
 ## Story and Visualizations
 
