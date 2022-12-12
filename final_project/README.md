@@ -32,6 +32,8 @@ To understand how the American population adopts and uses technologies, I used v
 
 Data about technology adoption was collected from research at [Our World in Data](https://ourworldindata.org/) on the diffusion of different technologies around the world. In their research, Hannah Ritchie and Max Roser assembled a dataset based on relevant sources shared by [Horace Dediu](http://www.asymco.com/author/asymco/), who studies technological change over time. Material used in this project was specific to American households’ adoption of communication technologies only.
 
+Data files from the American Time Use Survey were too large to upload. [Download the data from Box](https://uchicago.box.com/v/time-use-data).
+
 ## Story and Visualizations
 
 The story expressed in this project uses insights from well-regarded population surveys to understand trends in American adoption and use of communication technologies. The scope of this project is more investigative than argumentative; it seeks to answer the same question, “Why is technology ubiquitous,” through three perspectives: adoption, access, and time. Each perspective explores and interrogates the mixed sentiment that technology is ever-present, and expanding still. This project embraces the idea that different readers may resonate with the different explanations expressed, given their own experiences with technology.
